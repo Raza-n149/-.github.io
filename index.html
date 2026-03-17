@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Свадебное приглашение | Мария & Александр</title>
+    <!-- Google Fonts для элегантных шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: #fdf8f5; /* очень нежный персиковый подтон */
+            color: #5e5b5b;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: #7a6a6a;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero секция с нежным градиентом и цветами */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(145deg, #ffece5 0%, #fde9f0 70%, #f7e0e8 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: "✽ ✾ ✿ ✼";
+            font-size: 8rem;
+            color: rgba(255, 230, 240, 0.6);
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 100%;
+            transform: rotate(-5deg);
+            letter-spacing: 30px;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: floatFlowers 18s infinite ease-in-out;
+        }
+
+        .hero:after {
+            content: "❀ ✤ ❁ ✤ ❀";
+            font-size: 9rem;
+            color: rgba(245, 215, 225, 0.5);
+            position: absolute;
+            bottom: -40px;
+            right: -30px;
+            transform: rotate(10deg);
+            letter-spacing: 25px;
+            pointer-events: none;
+            white-space: nowrap;
+            animation: floatFlowers 22s infinite reverse;
+        }
+
+        @keyframes floatFlowers {
+            0% { transform: translateY(0) rotate(-5deg) scale(1); opacity: 0.4; }
+            50% { transform: translateY(-20px) rotate(0deg) scale(1.02); opacity: 0.6; }
+            100% { transform: translateY(0) rotate(-5deg) scale(1); opacity: 0.4; }
+        }
+
+        .hero-content {
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 30px;
+            padding: 50px 40px;
+            max-width: 750px;
+            margin: 0 20px;
+            box-shadow: 0 20px 40px rgba(230, 200, 200, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            z-index: 2;
+        }
+
+        .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.5rem;
+            font-weight: 500;
+            color: #7a5a5a;
+            line-height: 1.2;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 10px rgba(255, 240, 240, 0.8);
+        }
+
+        .names span {
+            font-size: 3rem;
+            display: block;
+            font-style: italic;
+            color: #b59696;
+            margin: 5px 0;
+        }
+
+        .date-badge {
+            font-size: 1.5rem;
+            background: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            padding: 12px 35px;
+            border-radius: 50px;
+            margin: 25px 0 15px;
+            letter-spacing: 2px;
+            color: #8e7676;
+            border: 1px solid #f1d5d5;
+            font-weight: 300;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .countdown-item {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(4px);
+            border-radius: 20px;
+            padding: 15px 10px;
+            min-width: 80px;
+            box-shadow: 0 8px 20px rgba(200, 160, 160, 0.15);
+            border: 1px solid #ffeae4;
+        }
+
+        .countdown-item span {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #b28181;
+            line-height: 1;
+        }
+
+        .countdown-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #9f8787;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #dbb6b6;
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 40px;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 16px rgba(210, 150, 150, 0.3);
+            text-decoration: none;
+            border: 1px solid #f2dbdb;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #cf9f9f;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(190, 130, 130, 0.4);
+        }
+
+        /* Основные секции */
+        .section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .section:nth-child(even) {
+            background-color: #fff9f7;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #a58383;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: "";
+            display: block;
+            width: 70px;
+            height: 2px;
+            background: #eccaca;
+            margin: 15px auto 0;
+        }
+
+        .story-text {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #7b6e6e;
+            font-style: italic;
+        }
+
+        .story-text p {
+            margin: 25px 0;
+        }
+
+        /* Детали дня */
+        .details-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .detail-card {
+            background: white;
+            padding: 35px 25px;
+            border-radius: 30px;
+            flex: 1 1 260px;
+            max-width: 320px;
+            box-shadow: 0 15px 30px #f3e0e0;
+            transition: all 0.2s;
+            border: 1px solid #ffefef;
+        }
+
+        .detail-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 35px #eaccd0;
+        }
+
+        .detail-card i {
+            font-size: 2.8rem;
+            color: #d4a7a7;
+            margin-bottom: 20px;
+        }
+
+        .detail-card h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .detail-card p {
+            font-size: 1.1rem;
+            margin: 8px 0;
+            color: #8e7a7a;
+        }
+
+        .address-link {
+            color: #b28181;
+            text-decoration: underline;
+            font-weight: 400;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        /* Дресс-код */
+        .dress-code {
+            background: #f7e9ed;
+            border-radius: 60px;
+            padding: 40px 30px;
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .dress-colors {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+
+        .color-dot {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            box-shadow: 0 5px 15px rgba(140, 100, 100, 0.2);
+            border: 3px solid white;
+        }
+
+        .color-dot.beige { background: #f8e0d5; }
+        .color-dot.rose { background: #f7cfd4; }
+        .color-dot.mint { background: #d7ece8; }
+        .color-dot.lavender { background: #e2d1e7; }
+
+        .dress-code p {
+            font-size: 1.2rem;
+            max-width: 500px;
+            margin: 20px auto 0;
+        }
+
+        /* Галерея (простые цветочные узоры) */
+        .flower-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .flower-icon {
+            font-size: 4rem;
+            color: #efcfcf;
+            opacity: 0.8;
+        }
+
+        /* RSVP форма */
+        .rsvp-box {
+            background: white;
+            padding: 40px;
+            border-radius: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 40px #f1d5d5;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #a58585;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #f5dfdf;
+            border-radius: 40px;
+            font-size: 1rem;
+            background: #fefaf8;
+            transition: border 0.3s;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #dbb6b6;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .radio-group label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 300;
+            cursor: pointer;
+        }
+
+        .radio-group input {
+            width: auto;
+            accent-color: #d4a7a7;
+        }
+
+        .btn-submit {
+            background: #dbb6b6;
+            color: white;
+            border: none;
+            padding: 16px 50px;
+            border-radius: 40px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s;
+            width: 100%;
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 2px;
+        }
+
+        .btn-submit:hover {
+            background: #c99f9f;
+        }
+
+        /* Футер */
+        .footer {
+            padding: 30px 0;
+            background: #ffece7;
+            font-size: 1rem;
+            color: #b09797;
+            border-top: 1px solid #fad7d7;
+        }
+
+        .footer .heart {
+            color: #d68484;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 650px) {
+            .names { font-size: 3rem; }
+            .hero-content { padding: 30px 15px; }
+            .countdown { gap: 10px; }
+            .countdown-item { min-width: 65px; padding: 10px 5px; }
+            .countdown-item span { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero секция с обратным отсчётом -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="names">Мария <span>&</span> Александр</h1>
+            <div class="date-badge">15.06.2025</div>
+            <p style="font-size: 1.3rem; color: #a27171;">«И я там был, и сердце пело...»</p>
+            
+            <!-- Обратный отсчёт (ставим дату свадьбы) -->
+            <div class="countdown" id="countdown">
+                <div class="countdown-item"><span id="days">00</span><p>дней</p></div>
+                <div class="countdown-item"><span id="hours">00</span><p>часов</p></div>
+                <div class="countdown-item"><span id="minutes">00</span><p>минут</p></div>
+                <div class="countdown-item"><span id="seconds">00</span><p>секунд</p></div>
+            </div>
+            
+            <a href="#rsvp" class="btn">ПОДТВЕРДИТЬ ПРИСУТСТВИЕ</a>
+        </div>
+    </section>
+
+    <!-- Короткая история -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Наша история</h2>
+            <div class="story-text">
+                <p>Мы встретились весной, когда цветут сады. С тех пор наши сердца бьются в унисон. <br> Мы верим, что настоящая любовь — это нежные лепестки и крепкие объятия. </p>
+                <p>И мы хотим разделить этот день с самыми близкими.</p>
+            </div>
+            <div class="flower-gallery">
+                <span class="flower-icon">🌸</span>
+                <span class="flower-icon">🌼</span>
+                <span class="flower-icon">🌷</span>
+                <span class="flower-icon">🌺</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Детали торжества -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Дата и место</h2>
+            <div class="details-grid">
+                <div class="detail-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>15 июня 2025</h3>
+                    <p>Сбор гостей в 16:00</p>
+                    <p>Церемония в 16:30</p>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>Усадьба "Весна"</h3>
+                    <p>Ленинградское шоссе, 45</p>
+                    <p>Зеленый зал, летняя веранда</p>
+                    <a href="#" class="address-link" target="_blank"><i class="fas fa-map-pin"></i> Открыть карту</a>
+                </div>
+                <div class="detail-card">
+                    <i class="fas fa-glass-cheers"></i>
+                    <h3>Банкет</h3>
+                    <p>Танцы до утра</p>
+                    <p>Фуршет и живая музыка</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Дресс-код и пожелания (нежные оттенки) -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Дресс-код</h2>
+            <div class="dress-code">
+                <p style="font-size: 1.4rem;">Поддержите нежную палитру нашего дня</p>
+                <div class="dress-colors">
+                    <div class="color-dot beige" title="Шампань / бежевый"></div>
+                    <div class="color-dot rose" title="Пудрово-розовый"></div>
+                    <div class="color-dot mint" title="Мятный"></div>
+                    <div class="color-dot lavender" title="Лавандовый"></div>
+                </div>
+                <p><i class="fas fa-leaf"></i>  Приветствуются цветочные принты и струящиеся ткани. <br> А для женщин — шляпки или украшения в волосы.</p>
+                <p style="margin-top: 20px;">Мужчинам: костюмы в пастельных тонах, бабочки приветствуются.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма RSVP -->
+    <section class="section" id="rsvp">
+        <div class="container">
+            <h2 class="section-title">Подтверждение</h2>
+            <div class="rsvp-box">
+                <p style="font-size: 1.4rem; margin-bottom: 25px;">Мы будем рады видеть вас!</p>
+                <form id="rsvpForm" onsubmit="event.preventDefault(); alert('Спасибо! Ваш ответ учтён (демо-режим). Ждем вас!');">
+                    <div class="form-group">
+                        <label>Ваше имя и фамилия</label>
+                        <input type="text" placeholder="Например, Екатерина Иванова" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Вы сможете присутствовать?</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="attendance" value="yes" checked> С радостью приду</label>
+                            <label><input type="radio" name="attendance" value="no"> К сожалению, не смогу</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Количество гостей (включая вас)</label>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Ваши пожелания или особые отметки</label>
+                        <input type="text" placeholder="Аллергии, предпочтения в еде...">
+                    </div>
+                    <button type="submit" class="btn-submit">Отправить ответ</button>
+                </form>
+                <p style="margin-top: 25px; font-size: 0.95rem; color: #b99f9f;">Пожалуйста, ответьте до 1 мая 2025</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Небольшая программа дня -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Программа</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; max-width: 700px; margin: 40px auto;">
+                <div style="background: #ffeae4; padding: 15px 25px; border-radius: 50px; width: 250px;"><i class="far fa-heart" style="color: #d4a7a7;"></i> 16:30 Церемония</div>
+                <div style="background: #ffeae4; padding: 15px 25px; border-radius: 50px; width: 250px;"><i class="fas fa-camera"></i> 17:30 Фотосессия</div>
+                <div style="background: #ffeae4; padding: 15px 25px; border-radius: 50px; width: 250px;"><i class="fas fa-utensils"></i> 18:30 Ужин</div>
+                <div style="background: #ffeae4; padding: 15px 25px; border-radius: 50px; width: 250px;"><i class="fas fa-music"></i> 20:00 Танцы</div>
+                <div style="background: #ffeae4; padding: 15px 25px; border-radius: 50px; width: 250px;"><i class="fas fa-birthday-cake"></i> 22:00 Торт</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер с пожеланием -->
+    <footer class="footer">
+        <div class="container">
+            <p>С нетерпением ждём встречи, чтобы разделить с вами этот день!</p>
+            <p>Мария & Александр <span class="heart">❤</span></p>
+            <p style="font-size: 0.9rem; margin-top: 15px;"><i class="far fa-envelope"></i> wedding@love.ru  |  +7 (999) 123-45-67</p>
+        </div>
+    </footer>
+
+    <!-- Скрипт обратного отсчёта (ставим дату свадьбы) -->
+    <script>
+        (function() {
+            // Установите дату свадьбы (год, месяц-1, день, час, минута)
+            const weddingDate = new Date(2025, 5, 15, 16, 30, 0); // 15 июня 2025, 16:30
+            function updateCountdown() {
+                const now = new Date();
+                const diff = weddingDate - now;
+
+                if (diff <= 0) {
+                    document.getElementById('days').innerText = '00';
+                    document.getElementById('hours').innerText = '00';
+                    document.getElementById('minutes').innerText = '00';
+                    document.getElementById('seconds').innerText = '00';
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (86400000)) / (3600000));
+                const minutes = Math.floor((diff % 3600000) / 60000);
+                const seconds = Math.floor((diff % 60000) / 1000);
+
+                document.getElementById('days').innerText = days < 10 ? '0' + days : days;
+                document.getElementById('hours').innerText = hours < 10 ? '0' + hours : hours;
+                document.getElementById('minutes').innerText = minutes < 10 ? '0' + minutes : minutes;
+                document.getElementById('seconds').innerText = seconds < 10 ? '0' + seconds : seconds;
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        })();
+    </script>
+
+    <!-- Плавный скролл для кнопки подтверждения -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
