@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #fef9f2;  /* очень тёплый светлый фон, как на скринах */
+            background-color: #fef9f2;
             font-family: 'Montserrat', sans-serif;
             font-weight: 300;
             color: #3a2e2b;
@@ -36,7 +36,7 @@
             width: 100%;
             background-color: #ffffffdf;
             backdrop-filter: blur(2px);
-            background: rgba(255, 255, 255, 0.85); /* лёгкая полупрозрачность как на скриншотах (белый слой) */
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 32px;
             box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 4px 18px rgba(0, 0, 0, 0.05);
             padding: 3rem 2.5rem;
@@ -44,7 +44,6 @@
             transition: all 0.3s;
         }
 
-        /* аккуратные разделы как на скриншотах — каждый блок дышит */
         .section {
             text-align: center;
             margin-bottom: 2.8rem;
@@ -54,7 +53,6 @@
             margin-bottom: 0;
         }
 
-        /* заголовок в стиле "ПРИГЛАШЕНИЕ НА СВАДЬБУ" — как на первом скрине */
         .invitation-label {
             font-family: 'Montserrat', sans-serif;
             font-size: 0.9rem;
@@ -66,7 +64,6 @@
             word-spacing: 2px;
         }
 
-        /* имена молодожёнов — крупно, гармонично */
         .couple-names {
             font-family: 'Cormorant Garamond', serif;
             font-size: 4.2rem;
@@ -90,7 +87,6 @@
             margin: 0 0.3rem;
         }
 
-        /* дата — жирная и чёткая, как на скринах */
         .main-date {
             font-family: 'Montserrat', sans-serif;
             font-size: 2rem;
@@ -105,7 +101,67 @@
             text-transform: uppercase;
         }
 
-        /* простое оспа (отсылка к "простое оспа" – возможно, опечатка, но сохраним шарм) */
+        /* ===== НОВЫЙ СТИЛЬ ДЛЯ РАМОЧКИ КАК НА СКРИНШОТЕ ===== */
+        .framed-block {
+            position: relative;
+            padding: 2.2rem 1.8rem;
+            margin: 2rem 0;
+            border: 1px dashed #d4b6a2;  /* пунктирная рамка */
+            border-radius: 24px;
+            background: rgba(255, 245, 238, 0.4);
+        }
+        
+        /* Уголки */
+        .framed-block::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            border-top: 2px solid #d4b6a2;
+            border-left: 2px solid #d4b6a2;
+            border-radius: 12px 0 0 0;
+        }
+        
+        .framed-block::after {
+            content: '';
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid #d4b6a2;
+            border-right: 2px solid #d4b6a2;
+            border-radius: 0 0 12px 0;
+        }
+        
+        /* Дополнительные уголки сверху справа и снизу слева для симметрии */
+        .framed-block .corner-top-right {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            border-top: 2px solid #d4b6a2;
+            border-right: 2px solid #d4b6a2;
+            border-radius: 0 12px 0 0;
+            pointer-events: none;
+        }
+        
+        .framed-block .corner-bottom-left {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            width: 30px;
+            height: 30px;
+            border-bottom: 2px solid #d4b6a2;
+            border-left: 2px solid #d4b6a2;
+            border-radius: 0 0 0 12px;
+            pointer-events: none;
+        }
+        /* ===== КОНЕЦ СТИЛЕЙ РАМОЧКИ ===== */
+
         .charming-headline {
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.5rem;
@@ -124,17 +180,11 @@
             font-size: 1.2rem;
             color: #584b45;
             max-width: 500px;
-            margin: 0 auto 2rem auto;
+            margin: 0 auto 1rem auto;
             font-weight: 300;
-            background: rgba(249, 240, 231, 0.6);
-            padding: 0.8rem 1.5rem;
-            border-radius: 60px;
             line-height: 1.6;
-            backdrop-filter: blur(2px);
         }
 
-        /* блок Профанация она? но на скрине "Профанация она" – скорее всего игривый заголовок, 
-           оставим его как деталь, но адаптируем под тему, пусть будет мини-заголовок */
         .quaint-title {
             font-size: 1.8rem;
             font-family: 'Cormorant Garamond', serif;
@@ -150,7 +200,6 @@
             margin: 0 0.3rem;
         }
 
-        /* расписание – как в третьем скрине: время, событие, место */
         .schedule-item {
             display: flex;
             flex-direction: column;
@@ -213,7 +262,6 @@
             margin: 0.8rem 0;
         }
 
-        /* маленький блок для даты никаха и места */
         .location-highlight {
             background: #f7ece2;
             border-radius: 48px;
@@ -234,14 +282,12 @@
             margin-top: 1rem;
         }
 
-        /* иконки и декоративные элементы */
         .flower-icon {
             color: #dbba9f;
             font-size: 1.2rem;
             margin: 0 0.3rem;
         }
 
-        /* адаптивность */
         @media (max-width: 500px) {
             .invitation-card {
                 padding: 2rem 1.2rem;
@@ -258,9 +304,11 @@
             .schedule-event {
                 font-size: 1.6rem;
             }
+            .framed-block {
+                padding: 1.5rem 1rem;
+            }
         }
 
-        /* эстетика из скринов: лёгкие скругления, "пустота" и воздух */
         .muted-sub {
             font-size: 1rem;
             color: #b29481;
@@ -280,11 +328,7 @@
 <body>
     <div class="invitation-card">
 
-        <!-- ПЕРВЫЙ ЭКРАН: приглашение + имена + дата (23.08.24 
-             но дата уточнена для Амины и Руслана — совместим 23.08.24 и 24.08.2024 в один блок? 
-             Сделаем оба дня намёком: основной день 24.08.2024, а 23.08 как дополнительный? 
-             но скриншоты говорят о двух датах — возможно, никах 23, свадьба 24. Покажем оба дня красиво.-->
-
+        <!-- ПЕРВЫЙ ЭКРАН: приглашение + имена + дата -->
         <div class="section">
             <div class="invitation-label">
                 <i class="fas fa-chevron-left flower-icon"></i> ПРИГЛАШЕНИЕ НА СВАДЬБУ <i class="fas fa-chevron-right flower-icon"></i>
@@ -295,7 +339,7 @@
                 <span>Руслан</span>
             </div>
             
-            <!-- ========== ВИДЕО ВСТАВЛЕНО ЗДЕСЬ ========== -->
+            <!-- ВИДЕО -->
             <div style="text-align: center; margin: 1.8rem 0;">
                 <video width="100%" controls playsinline style="max-width: 500px; border-radius: 24px; box-shadow: 0 10px 25px rgba(0,0,0,0.1);">
                     <source src="амина.MP4" type="video/mp4">
@@ -305,7 +349,6 @@
                     <i class="fas fa-heart" style="color: #d4a992;"></i> Короткое видео от нас <i class="fas fa-heart" style="color: #d4a992;"></i>
                 </p>
             </div>
-            <!-- ========== КОНЕЦ ВСТАВКИ ВИДЕО ========== -->
             
             <div class="main-date">
                 23.08.24 – 24.08.2024
@@ -315,25 +358,34 @@
             </div>
         </div>
 
-        <!-- ВТОРОЙ ЭКРАН: "Простое оспа!" — преобразуем как тёплое восклицание + фраза про воспоминания -->
+        <!-- ВТОРОЙ ЭКРАН: рамочка как на скриншоте с "Проще осягну!" -->
         <div class="section">
-            <div class="charming-headline">
-                <i class="fas fa-sparkle"></i> Простое счастье! <i class="fas fa-sparkle"></i>
+            <!-- ===== БЛОК С РАМОЧКОЙ ===== -->
+            <div class="framed-block">
+                <!-- Уголки (дополнительные) -->
+                <div class="corner-top-right"></div>
+                <div class="corner-bottom-left"></div>
+                
+                <div class="charming-headline">
+                    <i class="fas fa-sparkle"></i> Проще осягну! <i class="fas fa-sparkle"></i>
+                </div>
+                <div class="description-text">
+                    Совсем скоро в нашей жизни произойдет важное событие — наша свадьба!
+                </div>
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 400; letter-spacing: 3px; color: #876b5b; margin: 0.5rem 0 1rem 0;">
+                    24.08.2024
+                </div>
+                <p style="font-size: 1.3rem; max-width: 450px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; color: #5d4b41;">
+                    Давайте создадим вместе незабываемые воспоминания,<br> наполненные радостью, любовью и счастьем.
+                </p>
             </div>
-            <div class="description-text">
-                Совсем скоро в нашей жизни произойдёт важное событие — наша свадьба!<br>
-                24.08.2024
-            </div>
-            <p style="font-size: 1.3rem; max-width: 450px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; background: rgba(239, 225, 214, 0.4); border-radius: 60px; padding: 0.6rem 1.2rem;">
-                Давайте создадим вместе незабываемые воспоминания,<br> наполненные радостью, любовью и счастьем.
-            </p>
+            <!-- ===== КОНЕЦ БЛОКА С РАМОЧКОЙ ===== -->
         </div>
 
-        <!-- декоративный разделитель как намёк на переход -->
+        <!-- декоративный разделитель -->
         <hr class="soft-rule">
 
-        <!-- ТРЕТИЙ ЭКРАН: Профанация она? Сохраняем как есть, но можно интерпретировать как "Программа дня" 
-             но пусть будет именно та фраза для аутентичности "Профанация она" — и далее расписание --> 
+        <!-- ТРЕТИЙ ЭКРАН: расписание -->
         <div class="section">
             <div class="quaint-title">
                 <i class="fas fa-leaf"></i> профанация она? <i class="fas fa-leaf"></i>
@@ -347,7 +399,7 @@
                 <div class="schedule-place"><i class="fas fa-users"></i> Встречаемся, знакомимся и настраиваемся на весёлую свадьбу</div>
             </div>
 
-            <!-- НИКАХ 16:00 + мечеть Ляля-Тюльпан -->
+            <!-- НИКАХ 16:00 -->
             <div class="schedule-item">
                 <div class="schedule-time">16:00</div>
                 <div class="schedule-event">НИКАХ</div>
@@ -356,7 +408,7 @@
                 </div>
             </div>
 
-            <!-- добавим ещё намёк на вторую часть вечера (так как обычно продолжается) -->
+            <!-- Торжественный ужин -->
             <div style="background: #f6ebe2; border-radius: 60px; padding: 1.2rem; margin-top: 1.2rem;">
                 <p style="font-size: 1.4rem; font-family: 'Cormorant Garamond';"><i class="fas fa-cake"></i> Торжественный ужин</p>
                 <p style="font-size: 1rem;">ресторан «Урал» · сбор в 18:00</p>
@@ -364,7 +416,7 @@
             </div>
         </div>
 
-        <!-- дополнительный блок с точной датой никаха, как в первом скрине мелькает 23.08 -->
+        <!-- Блок с датой никаха -->
         <div class="location-highlight">
             <i class="fas fa-calendar-alt" style="color:#b0846a; margin-right: 8px;"></i> 
             <span style="font-weight: 500;">Никах: 23.08.24 в 16:00</span> · мечеть «Ляля-Тюльпан»
@@ -373,17 +425,17 @@
             </div>
         </div>
 
-        <!-- заключительная тёплая строка -->
+        <!-- Заключительная строка -->
         <div style="text-align: center; margin-top: 2rem; font-size: 1rem; color:#bb9b88;">
             <i class="fas fa-feather"></i> С нетерпением ждём вас, чтобы разделить этот день <i class="fas fa-feather"></i>
         </div>
 
-        <!-- имена молодожёнов ещё раз мелко, как подпись -->
+        <!-- Подпись -->
         <div style="margin-top: 2rem; font-family: 'Cormorant Garamond'; font-size: 1.4rem; color: #ac8a75; border-top: 1px dashed #e7cfc0; padding-top: 1rem;">
             Амина & Руслан
         </div>
     </div>
-    <!-- маленький футер (дань скриншотам) -->
+    <!-- Футер -->
     <div style="margin-top: 1.5rem; opacity: 0.6; font-size: 0.7rem; letter-spacing: 1px; color: #b8a28e;">
         <i class="fas fa-chevron-left"></i> создано с вдохновением из ваших эскизов <i class="fas fa-chevron-right"></i>
     </div>
