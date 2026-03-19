@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Амина и Руслан · Свадебное приглашение</title>
+    <!-- Google Fonts для элегантности и простоты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (бесплатные иконки) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fef9f2;  /* очень тёплый светлый фон, как на скринах */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            color: #3a2e2b;
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+        }
+
+        .invitation-card {
+            max-width: 700px;
+            width: 100%;
+            background-color: #ffffffdf;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.85); /* лёгкая полупрозрачность как на скриншотах (белый слой) */
+            border-radius: 32px;
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.15), 0 4px 18px rgba(0, 0, 0, 0.05);
+            padding: 3rem 2.5rem;
+            border: 1px solid #f0e4d5;
+            transition: all 0.3s;
+        }
+
+        /* аккуратные разделы как на скриншотах — каждый блок дышит */
+        .section {
+            text-align: center;
+            margin-bottom: 2.8rem;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        /* заголовок в стиле "ПРИГЛАШЕНИЕ НА СВАДЬБУ" — как на первом скрине */
+        .invitation-label {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.9rem;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #c39a7c;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            word-spacing: 2px;
+        }
+
+        /* имена молодожёнов — крупно, гармонично */
+        .couple-names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4.2rem;
+            font-weight: 500;
+            line-height: 1.1;
+            color: #4e3e38;
+            margin-bottom: 0.7rem;
+            letter-spacing: 2px;
+        }
+
+        .couple-names span {
+            display: inline-block;
+            padding: 0 0.15rem;
+        }
+
+        .and-symbol {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.8rem;
+            font-weight: 400;
+            color: #dbb6a2;
+            margin: 0 0.3rem;
+        }
+
+        /* дата — жирная и чёткая, как на скринах */
+        .main-date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: #876b5b;
+            border-top: 1px solid #eadbcb;
+            border-bottom: 1px solid #eadbcb;
+            padding: 0.7rem 0;
+            display: inline-block;
+            margin: 1rem 0 1.2rem 0;
+            text-transform: uppercase;
+        }
+
+        /* простое оспа (отсылка к "простое оспа" – возможно, опечатка, но сохраним шарм) */
+        .charming-headline {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #a3806b;
+            margin-bottom: 0.5rem;
+        }
+
+        .charming-headline i {
+            font-size: 2rem;
+            color: #d4a992;
+            margin: 0 0.5rem;
+        }
+
+        .description-text {
+            font-size: 1.2rem;
+            color: #584b45;
+            max-width: 500px;
+            margin: 0 auto 2rem auto;
+            font-weight: 300;
+            background: rgba(249, 240, 231, 0.6);
+            padding: 0.8rem 1.5rem;
+            border-radius: 60px;
+            line-height: 1.6;
+            backdrop-filter: blur(2px);
+        }
+
+        /* блок Профанация она? но на скрине "Профанация она" – скорее всего игривый заголовок, 
+           оставим его как деталь, но адаптируем под тему, пусть будет мини-заголовок */
+        .quaint-title {
+            font-size: 1.8rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: #a0694f;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            text-transform: lowercase;
+        }
+
+        .quaint-title i {
+            font-size: 1.6rem;
+            color: #bda797;
+            margin: 0 0.3rem;
+        }
+
+        /* расписание – как в третьем скрине: время, событие, место */
+        .schedule-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 2.2rem;
+            border-bottom: 1px dashed #e7d8cb;
+            padding-bottom: 1.8rem;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .schedule-time {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: #9e7b66;
+            background: #f9efe7;
+            padding: 0.3rem 1.8rem;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            border: 1px solid #eddacb;
+        }
+
+        .schedule-event {
+            font-size: 1.9rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            color: #3f2f28;
+            margin-bottom: 0.2rem;
+        }
+
+        .schedule-place {
+            font-size: 1.1rem;
+            color: #826b5e;
+            background: rgba(255, 240, 230, 0.7);
+            padding: 0.4rem 1.5rem;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 0.4rem;
+            border: 1px solid #eed7c5;
+            max-width: 90%;
+        }
+
+        .schedule-place i {
+            color: #b58c74;
+            font-size: 1rem;
+        }
+
+        .divider-dots {
+            letter-spacing: 4px;
+            font-size: 1.8rem;
+            color: #ddc3b2;
+            margin: 0.8rem 0;
+        }
+
+        /* маленький блок для даты никаха и места */
+        .location-highlight {
+            background: #f7ece2;
+            border-radius: 48px;
+            padding: 1.8rem 1.5rem;
+            margin: 2rem 0 0.8rem 0;
+            border: 1px solid #ecd9c9;
+        }
+
+        .location-highlight p {
+            font-size: 1.3rem;
+        }
+
+        .small-note {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #b3927e;
+            text-transform: uppercase;
+            margin-top: 1rem;
+        }
+
+        /* иконки и декоративные элементы */
+        .flower-icon {
+            color: #dbba9f;
+            font-size: 1.2rem;
+            margin: 0 0.3rem;
+        }
+
+        /* адаптивность */
+        @media (max-width: 500px) {
+            .invitation-card {
+                padding: 2rem 1.2rem;
+            }
+            .couple-names {
+                font-size: 3rem;
+            }
+            .and-symbol {
+                font-size: 2.8rem;
+            }
+            .main-date {
+                font-size: 1.5rem;
+            }
+            .schedule-event {
+                font-size: 1.6rem;
+            }
+        }
+
+        /* эстетика из скринов: лёгкие скругления, "пустота" и воздух */
+        .muted-sub {
+            font-size: 1rem;
+            color: #b29481;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 0.8rem;
+        }
+
+        hr.soft-rule {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #e9d9cb, transparent);
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="invitation-card">
+
+        <!-- ПЕРВЫЙ ЭКРАН: приглашение + имена + дата (23.08.24) 
+             но дата уточнена для Амины и Руслана — совместим 23.08.24 и 24.08.2024 в один блок? 
+             Сделаем оба дня намёком: основной день 24.08.2024, а 23.08 как дополнительный? 
+             но скриншоты говорят о двух датах — возможно, никах 23, свадьба 24. Покажем оба дня красиво.-->
+
+        <div class="section">
+            <div class="invitation-label">
+                <i class="fas fa-chevron-left flower-icon"></i> ПРИГЛАШЕНИЕ НА СВАДЬБУ <i class="fas fa-chevron-right flower-icon"></i>
+            </div>
+            <div class="couple-names">
+                <span>Амина</span>
+                <span class="and-symbol">&</span>
+                <span>Руслан</span>
+            </div>
+            <div class="main-date">
+                23.08.24 – 24.08.2024
+            </div>
+            <div style="font-size: 1.2rem; color: #b38f79; margin-top: 0.3rem;">
+                <i class="fas fa-heart" style="font-size: 0.9rem; opacity: 0.7;"></i> никах & торжество <i class="fas fa-heart" style="font-size: 0.9rem; opacity: 0.7;"></i>
+            </div>
+        </div>
+
+        <!-- ВТОРОЙ ЭКРАН: "Простое оспа!" — преобразуем как тёплое восклицание + фраза про воспоминания -->
+        <div class="section">
+            <div class="charming-headline">
+                <i class="fas fa-sparkle"></i> Простое счастье! <i class="fas fa-sparkle"></i>
+            </div>
+            <div class="description-text">
+                Совсем скоро в нашей жизни произойдёт важное событие — наша свадьба!<br>
+                24.08.2024
+            </div>
+            <p style="font-size: 1.3rem; max-width: 450px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; background: rgba(239, 225, 214, 0.4); border-radius: 60px; padding: 0.6rem 1.2rem;">
+                Давайте создадим вместе незабываемые воспоминания,<br> наполненные радостью, любовью и счастьем.
+            </p>
+        </div>
+
+        <!-- декоративный разделитель как намёк на переход -->
+        <hr class="soft-rule">
+
+        <!-- ТРЕТИЙ ЭКРАН: Профанация она? Сохраняем как есть, но можно интерпретировать как "Программа дня" 
+             но пусть будет именно та фраза для аутентичности "Профанация она" — и далее расписание --> 
+        <div class="section">
+            <div class="quaint-title">
+                <i class="fas fa-leaf"></i> профанация она? <i class="fas fa-leaf"></i>
+            </div>
+            <div class="muted-sub" style="margin-top: -0.2rem;">программа • никах • сбор гостей</div>
+
+            <!-- СБОР ГОСТЕЙ 15:00 -->
+            <div class="schedule-item">
+                <div class="schedule-time">15:00</div>
+                <div class="schedule-event">СБОР ГОСТЕЙ</div>
+                <div class="schedule-place"><i class="fas fa-users"></i> Встречаемся, знакомимся и настраиваемся на весёлую свадьбу</div>
+            </div>
+
+            <!-- НИКАХ 16:00 + мечеть Ляля-Тюльпан -->
+            <div class="schedule-item">
+                <div class="schedule-time">16:00</div>
+                <div class="schedule-event">НИКАХ</div>
+                <div class="schedule-place">
+                    <i class="fas fa-mosque"></i> Мечеть «Ляля-Тюльпан», ул. Космонавтов
+                </div>
+            </div>
+
+            <!-- добавим ещё намёк на вторую часть вечера (так как обычно продолжается) -->
+            <div style="background: #f6ebe2; border-radius: 60px; padding: 1.2rem; margin-top: 1.2rem;">
+                <p style="font-size: 1.4rem; font-family: 'Cormorant Garamond';"><i class="fas fa-cake"></i> Торжественный ужин</p>
+                <p style="font-size: 1rem;">ресторан «Урал» · сбор в 18:00</p>
+                <p style="font-size: 0.85rem; letter-spacing: 1px; color:#a57962;">(детали уточняйте у молодожёнов)</p>
+            </div>
+        </div>
+
+        <!-- дополнительный блок с точной датой никаха, как в первом скрине мелькает 23.08 -->
+        <div class="location-highlight">
+            <i class="fas fa-calendar-alt" style="color:#b0846a; margin-right: 8px;"></i> 
+            <span style="font-weight: 500;">Никах: 23.08.24 в 16:00</span> · мечеть «Ляля-Тюльпан»
+            <div style="font-size: 0.9rem; margin-top: 10px; color:#5d4b41;">
+                <i class="fas fa-map-pin"></i> ул. Космонавтов, 16
+            </div>
+        </div>
+
+        <!-- заключительная тёплая строка -->
+        <div style="text-align: center; margin-top: 2rem; font-size: 1rem; color:#bb9b88;">
+            <i class="fas fa-feather"></i> С нетерпением ждём вас, чтобы разделить этот день <i class="fas fa-feather"></i>
+        </div>
+
+        <!-- имена молодожёнов ещё раз мелко, как подпись -->
+        <div style="margin-top: 2rem; font-family: 'Cormorant Garamond'; font-size: 1.4rem; color: #ac8a75; border-top: 1px dashed #e7cfc0; padding-top: 1rem;">
+            Амина & Руслан
+        </div>
+    </div>
+    <!-- маленький футер (дань скриншотам) -->
+    <div style="margin-top: 1.5rem; opacity: 0.6; font-size: 0.7rem; letter-spacing: 1px; color: #b8a28e;">
+        <i class="fas fa-chevron-left"></i> создано с вдохновением из ваших эскизов <i class="fas fa-chevron-right"></i>
+    </div>
+</body>
+</html>
