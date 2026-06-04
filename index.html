@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Амина и Руслан · Свадебное приглашение · Оливково-бежевая элегантность</title>
+    <title>Свадебное приглашение · Амина и Руслан</title>
     <!-- Google Fonts: элегантные шрифты -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,6 @@
             padding: 2rem 1rem;
         }
 
-        /* Оливково-бежевая гамма: основные акценты оливковые, бежевые, тёплые песочные */
         .invitation-card {
             max-width: 750px;
             width: 100%;
@@ -58,7 +57,7 @@
             font-size: 0.85rem;
             letter-spacing: 6px;
             text-transform: uppercase;
-            color: #8f7a64; /* приглушенный бежево-оливковый */
+            color: #8f7a64;
             margin-bottom: 1rem;
             font-weight: 500;
             word-spacing: 2px;
@@ -87,12 +86,11 @@
             margin: 0 0.3rem;
         }
 
-        /* основной блок с рамкой — оливковое обрамление */
         .framed-block {
             position: relative;
             padding: 2.2rem 1.8rem;
             margin: 1.8rem 0;
-            border: 1px dashed #c6b394;   /* мягкий оливково-песочный пунктир */
+            border: 1px dashed #c6b394;
             border-radius: 32px;
             background: rgba(245, 240, 230, 0.6);
             transition: all 0.2s;
@@ -150,7 +148,7 @@
             font-family: 'Cormorant Garamond', serif;
             font-size: 2.6rem;
             font-weight: 500;
-            color: #7a644b; /* оливково-какао */
+            color: #7a644b;
             margin-bottom: 0.75rem;
         }
 
@@ -169,19 +167,18 @@
             line-height: 1.6;
         }
 
-        /* НОВЫЙ ЖИРНЫЙ / БОЛЬШОЙ СТИЛЬ ДЛЯ "ПРОГРАММА ДНЯ" */
         .quaint-title {
             font-size: 2.3rem;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;          /* Жирнее */
-            color: #5f4a34;            /* насыщенный оливково-коричневый */
+            font-weight: 700;
+            color: #5f4a34;
             margin-bottom: 2rem;
             letter-spacing: 1px;
             text-transform: uppercase;
             background: linear-gradient(135deg, #7f674c, #aa8e6e);
             background-clip: text;
             -webkit-background-clip: text;
-            color: #7f674c; /* fallback */
+            color: #7f674c;
             display: inline-block;
             padding: 0 0.5rem;
             border-bottom: 2px solid #dcc9b2;
@@ -196,7 +193,6 @@
             margin: 0 0.5rem;
         }
 
-        /* элементы расписания — более плотные */
         .schedule-item {
             display: flex;
             flex-direction: column;
@@ -215,10 +211,10 @@
 
         .schedule-time {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 700;          /* жирное время */
+            font-weight: 700;
             font-size: 1.8rem;
             letter-spacing: 2.5px;
-            color: #776344;            /* глубокий оливково-бежевый */
+            color: #776344;
             background: #fef5ea;
             padding: 0.35rem 2rem;
             border-radius: 60px;
@@ -229,9 +225,9 @@
         }
 
         .schedule-event {
-            font-size: 2rem;           /* заметно крупнее, чем раньше */
+            font-size: 2rem;
             font-family: 'Cormorant Garamond', serif;
-            font-weight: 700;           /* жирный шрифт */
+            font-weight: 700;
             color: #3f3228;
             margin-bottom: 0.35rem;
             letter-spacing: 0.5px;
@@ -264,82 +260,12 @@
             font-size: 1.1rem;
         }
 
-        .divider-dots {
-            letter-spacing: 5px;
-            font-size: 1.6rem;
-            color: #cfbb9f;
-            margin: 0.5rem 0;
-        }
-
         .location-highlight {
-            background: #f5ede3;
+            background: #fcf6ef;
             border-radius: 48px;
             padding: 1.5rem 1rem;
             margin: 1.8rem 0 0.8rem 0;
             border: 1px solid #e2cfb9;
-        }
-
-        .small-note {
-            font-size: 0.85rem;
-            letter-spacing: 1px;
-            color: #a2886c;
-            text-transform: uppercase;
-            margin-top: 1rem;
-        }
-
-        .flower-icon {
-            color: #b49673;
-            font-size: 1.2rem;
-            margin: 0 0.4rem;
-        }
-
-        /* адаптивность */
-        @media (max-width: 550px) {
-            .invitation-card {
-                padding: 2rem 1.2rem;
-            }
-            .couple-names {
-                font-size: 3rem;
-            }
-            .and-symbol {
-                font-size: 2.6rem;
-            }
-            .main-date {
-                font-size: 1.5rem;
-            }
-            .schedule-event {
-                font-size: 1.6rem;
-            }
-            .schedule-time {
-                font-size: 1.4rem;
-            }
-            .framed-block {
-                padding: 1.5rem 1rem;
-            }
-            .quaint-title {
-                font-size: 1.8rem;
-            }
-        }
-
-        .muted-sub {
-            font-size: 1rem;
-            color: #b29481;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-top: 0.8rem;
-        }
-
-        hr.soft-rule {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #dccbb6, transparent);
-            margin: 2rem 0;
-        }
-
-        /* оливково-бежевые акценты для дополнительных элементов */
-        .schedule-item:hover {
-            background: #faf3ea;
-            transform: scale(0.99);
         }
 
         .main-date-alt {
@@ -361,12 +287,37 @@
             font-style: italic;
         }
 
-        button, .fake-btn {
-            background: none;
-            border: none;
+        @media (max-width: 550px) {
+            .invitation-card {
+                padding: 2rem 1.2rem;
+            }
+            .couple-names {
+                font-size: 3rem;
+            }
+            .and-symbol {
+                font-size: 2.6rem;
+            }
+            .schedule-event {
+                font-size: 1.6rem;
+            }
+            .schedule-time {
+                font-size: 1.4rem;
+            }
+            .framed-block {
+                padding: 1.5rem 1rem;
+            }
+            .quaint-title {
+                font-size: 1.8rem;
+            }
         }
 
-        /* видео-контейнер в оливковой гамме */
+        hr.soft-rule {
+            border: none;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #dccbb6, transparent);
+            margin: 2rem 0;
+        }
+
         video {
             border-radius: 28px;
             box-shadow: 0 15px 28px -12px rgba(70, 50, 35, 0.3);
@@ -388,7 +339,6 @@
                 <span>Руслан</span>
             </div>
             
-            <!-- Видео с повторением (оливково-бежевые тона на рамке) -->
             <div style="text-align: center; margin: 1.6rem 0;">
                 <video width="100%" autoplay loop muted playsinline style="max-width: 480px; border-radius: 28px; box-shadow: 0 12px 24px rgba(0,0,0,0.1); border: 1px solid #dacbb6;">
                     <source src="амина.MP4" type="video/mp4">
@@ -404,7 +354,7 @@
             </div>
         </div>
 
-        <!-- ВТОРОЙ ЭКРАН: рамочка с пожеланиями как на скриншоте (оливково-бежевая) -->
+        <!-- ВТОРОЙ ЭКРАН: рамочка с пожеланиями -->
         <div class="section">
             <div class="framed-block">
                 <div class="corner-top-right"></div>
@@ -415,7 +365,7 @@
                 <div class="description-text">
                     Совсем скоро в нашей жизни произойдет важное событие — наша свадьба!
                 </div>
-                <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 500; letter-spacing: 4px; color: #7a6249; margin: 0.5rem 0 1rem 0; background: #f9efE4; display: inline-block; padding: 0.2rem 1.2rem; border-radius: 100px;">
+                <div style="font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 500; letter-spacing: 4px; color: #7a6249; margin: 0.5rem 0 1rem 0; background: #f9efe4; display: inline-block; padding: 0.2rem 1.2rem; border-radius: 100px;">
                     19.09.2026
                 </div>
                 <p style="font-size: 1.3rem; max-width: 450px; margin: 0 auto; font-family: 'Cormorant Garamond', serif; font-weight: 500; color: #5c483b;">
@@ -424,31 +374,30 @@
             </div>
         </div>
 
-        <!-- декоративный разделитель мягкий -->
         <hr class="soft-rule">
 
-        <!-- ТРЕТИЙ ЭКРАН: ПРОГРАММА ДНЯ — УСИЛЕННАЯ (бОльшая и жирнее) -->
+        <!-- ТРЕТИЙ ЭКРАН: ПРОГРАММА ДНЯ -->
         <div class="section">
             <div class="quaint-title">
                 <i class="fas fa-calendar-alt"></i> ПРОГРАММА ДНЯ <i class="fas fa-leaf"></i>
             </div>
 
-            <!-- Сбор у жениха 09:00 -->
             <div class="schedule-item">
                 <div class="schedule-time">09:00</div>
                 <div class="schedule-event">СБОР ГОСТЕЙ У ЖЕНИХА</div>
-                <div class="schedule-place"><i class="fas fa-map-marker-alt"></i> пгт. Яблоновский, ул. Дорожная д. 214, 3 подъезд, 25 квартира, 2 этаж</div>
+                <div class="schedule-place"><i class="fas fa-map-marker-alt"></i> место сбора: дом жениха (по согласованию)</div>
             </div>
 
             <div class="schedule-item">
                 <div class="schedule-time">10:00</div>
                 <div class="schedule-event">СБОР ГОСТЕЙ У НЕВЕСТЫ</div>
-                <div class="schedule-place"><i class="fas fa-home"></i> а. Панахес, ул. </div>
+                <div class="schedule-place"><i class="fas fa-home"></i> место уточняется у организаторов</div>
             </div>
 
             <div class="schedule-item">
                 <div class="schedule-time">11:00</div>
                 <div class="schedule-event">ВЫВОД НЕВЕСТЫ ИЗ ДОМА</div>
+                <div class="schedule-place"><i class="fas fa-rings-wedding"></i> трогательная церемония выкупа</div>
             </div>
 
             <div class="schedule-item">
@@ -460,6 +409,7 @@
             <div class="schedule-item">
                 <div class="schedule-time">14:00</div>
                 <div class="schedule-event">ВЫЕЗД В ЗАГС</div>
+                <div class="schedule-place"><i class="fas fa-car"></i> свадебный кортеж отправляется</div>
             </div>
 
             <div class="schedule-item">
@@ -474,30 +424,25 @@
                 <div class="schedule-place"><i class="fas fa-utensils"></i> г. Адыгейск, ул. Советская д. 29</div>
             </div>
 
-            <!-- Дополнительный блок с банкетным напоминанием (для атмосферы) -->
-            <div class="location-highlight" style="background:#fcf6ef;">
+            <div class="location-highlight">
                 <p style="font-size: 1.2rem; font-weight: 500; color:#6f5440;"><i class="fas fa-champagne-glasses"></i> Торжественный ужин и танцы</p>
                 <p style="font-family: 'Cormorant Garamond'; font-size: 1.3rem;">Будем рады каждому из вас разделить с нами вечер любви и счастья.</p>
             </div>
         </div>
 
-        <!-- Заключительная строка с тёплыми словами -->
         <div style="text-align: center; margin-top: 2rem; font-size: 1.1rem; color: #9f846b;">
             <i class="fas fa-feather-alt"></i> С нетерпением ждём вас, чтобы разделить с нами этот важный день <i class="fas fa-feather-alt"></i>
         </div>
 
-        <!-- Подпись молодожёнов в оливковой гамме -->
         <div style="margin-top: 2rem; font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: #836e54; border-top: 1px dashed #dbcbb6; padding-top: 1.2rem; text-align: center; letter-spacing: 1px;">
             Амина & Руслан
         </div>
 
-        <!-- Маленькая декоративная выноска про дату -->
         <div style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #bc9f84; font-family: monospace; letter-spacing: 2px;">
             19 · 09 · 2026
         </div>
     </div>
 
-    <!-- футер с крошечным акцентом (опционально) -->
     <div style="margin-top: 1.5rem; opacity: 0.65; font-size: 0.7rem; letter-spacing: 1px; color: #a2876f; text-align: center;">
         <i class="fas fa-seedling"></i> С любовью, навсегда <i class="fas fa-seedling"></i>
     </div>
